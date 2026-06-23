@@ -15,5 +15,14 @@ run:
 
  ![Alt text](/assets/screenshot-coverage.png?raw=true "snapshot")
 
+ to generate this html report, first install `lcov`, then run: 
+
+ ```
+    $ flutter test --coverage
+    $ genhtml coverage/lcov.info -o coverage/html
+    $ open coverage/html/index.html
+ ```
+
+
 # contact
 arm-cade@proton.me
