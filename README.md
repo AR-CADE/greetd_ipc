@@ -1,10 +1,9 @@
 # greetd_ipc
 An Greetd client library written in Dart... that can eventually be used to build something like that:
 
-
-![Alt text](/assets/screenshot1.png?raw=true "snapshot") ![Alt text](/assets/screenshot2.png?raw=true "snapshot") ![Alt text](/assets/screenshot3.png?raw=true "snapshot")
-
-
+| [flgreet]() | ??? |
+|--|--|
+| [![sreenshot](https://github.com/AR-CADE/flgreet/blob/main/assets/flgreet.png?raw=true "snapshot")](https://github.com/AR-CADE/flgreet/blob/main/assets/flgreet.png?raw=true "snapshot") | [![sreenshot](./assets/screenshot1.png?raw=true "snapshot")](./assets/screenshot1.png?raw=true "snapshot") |
 
 # (re)generate serializers
 run:
@@ -13,7 +12,7 @@ run:
 
 # current test coverage
 
- ![Alt text](/assets/screenshot-coverage.png?raw=true "snapshot")
+[![sreenshot](./assets/screenshot-coverage.png?raw=true "coverage")](./assets/screenshot-coverage.png?raw=true "coverage")
 
  to generate this html report, first install `lcov`, then run: 
 
