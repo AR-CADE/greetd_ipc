@@ -1,6 +1,6 @@
 # greetd_ipc
 
-A "Greetd" client library written in Dart, which can be used to create beautiful greeters using Flutter.
+A Greetd client library written in Dart, which can be used to create beautiful greeters using Flutter.
 
 | [flgreet](https://github.com/AR-CADE/flgreet) | ??? |
 |--|--|
