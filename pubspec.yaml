@@ -1,5 +1,5 @@
 name: greetd_ipc
-description: A starting point for Dart libraries or applications.
+description: A Greetd client library written in Dart.
 version: 1.0.3
 repository: https://github.com/AR-CADE/greetd_ipc
 
