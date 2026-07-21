@@ -1,6 +1,6 @@
 # greetd_ipc
 
-A Greetd client library written in Dart, which can be used to create beautiful greeters using Flutter.
+A [Greetd](https://sr.ht/~kennylevinsen/greetd) client library written in Dart, which can be used to create beautiful greeters using Flutter.
 
 | [flgreet](https://github.com/AR-CADE/flgreet) | ??? |
 |--|--|
@@ -20,7 +20,7 @@ to generate this html report, first install `lcov`, then run:
 
 ```
 
-$ flutter test --coverage
+$ dart test --coverage-path=coverage/lcov.info
 
 $ genhtml coverage/lcov.info -o coverage/html
 
