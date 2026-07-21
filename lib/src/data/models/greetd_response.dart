@@ -45,5 +45,5 @@ abstract class GreetdResponse extends Equatable {
 
   Map<String, dynamic> toJson();
 
-  String get type => throw UnimplementedError();
+  String get type;
 }

@@ -24,6 +24,19 @@ void main() {
     group('copyWith', () {
       test('supports value comparisons', () {
         expect(
+          GreetdState.initial().copyWith(username: 'username'),
+          GreetdState.initial().copyWith(
+            status: GreetdStatus.initial,
+            username: 'username',
+          ),
+        );
+
+        expect(
+          GreetdState.initial().copyWith(),
+          GreetdState.initial(),
+        );
+
+        expect(
           GreetdState.initial().copyWith(
             status: GreetdStatus.success,
             username: 'username',

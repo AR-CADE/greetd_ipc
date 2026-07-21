@@ -31,17 +31,24 @@ class GreetdRepository {
       throw Exception('GREETD_SOCK not set');
     }
 
+    if (!File(socketPath).existsSync()) {
+      throw Exception('Socket file does not exist');
+    }
+
     const timeout = Duration(seconds: 3);
 
     final host = InternetAddress(socketPath, type: InternetAddressType.unix);
     _socket = await RawSocket.connect(host, defaultPort, timeout: timeout);
 
-    _connected = true;
+    _connected = _socket != null;
 
     _listenForResponses();
   }
 
   void _listenForResponses() {
+    if (!connected) {
+      return;
+    }
     _streamListener = _socket!.listen(
       (event) async {
         if (event == RawSocketEvent.read) {
@@ -102,7 +109,7 @@ class GreetdRepository {
   }
 
   Future<void> sendRequest(GreetdRequest request) async {
-    if (_socket == null) {
+    if (!connected) {
       await _clientAbort('Socket not connected');
     }
 

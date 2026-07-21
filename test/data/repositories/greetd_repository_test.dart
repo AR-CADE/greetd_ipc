@@ -186,6 +186,32 @@ void main() {
               ),
             ),
           );
+          expect(
+            () => repository.connect(),
+            throwsA(
+              isA<Exception>().having(
+                (e) => e.toString(),
+                'message',
+                contains('GREETD_SOCK not set'),
+              ),
+            ),
+          );
+        },
+      );
+
+      test(
+        'connect throws Exception if GREETD_SOCK path does not exist',
+        () async {
+          expect(
+            () => repository.connect(environment: {'GREETD_SOCK': 'test_path'}),
+            throwsA(
+              isA<Exception>().having(
+                (e) => e.toString(),
+                'message',
+                contains('Socket file does not exist'),
+              ),
+            ),
+          );
         },
       );
 
@@ -194,6 +220,23 @@ void main() {
         await repository.connect(environment: {'GREETD_SOCK': socketPath});
         expect(repository.connected, isTrue);
       });
+
+      test(
+        'sendRequest throws Exception if socket is not connected',
+        () async {
+          expect(
+            () =>
+                repository.sendRequest(const CreateSessionRequest('test_user')),
+            throwsA(
+              isA<Exception>().having(
+                (e) => e.toString(),
+                'message',
+                contains('Socket not connected'),
+              ),
+            ),
+          );
+        },
+      );
 
       test('sendRequest sends serialized bytes with length header', () async {
         await repository.connect(environment: {'GREETD_SOCK': socketPath});

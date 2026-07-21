@@ -204,6 +204,29 @@ void main() {
     );
 
     blocTest<GreetdBloc, GreetdState>(
+      'emits [loading, error] when sendRequest throws',
+      setUp: () {
+        when(
+          () => repository.sendRequest(any()),
+        ).thenThrow(Exception('oops'));
+      },
+      build: () => GreetdBloc(repository: repository),
+      act: (bloc) async {
+        await bloc.stream.firstWhere((s) => s.status == GreetdStatus.connected);
+        bloc.add(const StartSession(cmd: ['ls'], env: ['PATH=/bin']));
+      },
+      skip: 2,
+      expect: () => const [
+        GreetdState(status: GreetdStatus.loading, username: ''),
+        GreetdState(
+          status: GreetdStatus.error,
+          username: '',
+          error: 'Exception: oops',
+        ),
+      ],
+    );
+
+    blocTest<GreetdBloc, GreetdState>(
       'CancelSession sends CancelSessionRequest and resets state to initial',
       build: () => GreetdBloc(repository: repository),
       act: (bloc) async {
