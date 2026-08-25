@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
+
 import 'package:greetd_ipc/src/data/models/greetd_enumeration.dart';
 import 'package:greetd_ipc/src/data/models/greetd_request.dart';
 import 'package:test/test.dart';

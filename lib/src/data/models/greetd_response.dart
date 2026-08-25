@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:typed_data';
+
 import 'package:equatable/equatable.dart';
 import 'package:greetd_ipc/src/data/models/auth_message_response.dart'
     show AuthMessageResponse;

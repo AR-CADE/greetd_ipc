@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+
 import 'package:greetd_ipc/src/data/models/auth_message_response.dart'
     show AuthMessageResponse;
 import 'package:greetd_ipc/src/data/models/error_response.dart'

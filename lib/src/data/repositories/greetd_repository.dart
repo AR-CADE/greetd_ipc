@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 import 'dart:typed_data';
+
 import 'package:greetd_ipc/src/data/models/greetd_request.dart'
     show GreetdRequest;
 import 'package:greetd_ipc/src/data/models/greetd_response.dart'

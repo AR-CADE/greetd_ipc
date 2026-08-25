@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:bloc_test/bloc_test.dart';
 import 'package:greetd_ipc/greetd_ipc.dart';
 import 'package:greetd_ipc/src/data/models/auth_message_response.dart';

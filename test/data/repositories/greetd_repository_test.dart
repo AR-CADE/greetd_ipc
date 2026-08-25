@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
+
 import 'package:greetd_ipc/greetd_ipc.dart';
 import 'package:greetd_ipc/src/data/models/create_session_request.dart';
 import 'package:greetd_ipc/src/data/models/error_response.dart';
